@@ -1,13 +1,11 @@
 import express from "express";
+import pokedexRouter from "./routes/pokedex.routes.js";
 
 const app = express();
-const PORT = 3001;
+export const PORT = 3001;
 
 app.use(express.json());
-
-app.get("/health", (req, res) => {
-    res.status(200).json({ status: "ok" });
-});
+app.use(pokedexRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

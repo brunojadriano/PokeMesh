@@ -33,6 +33,24 @@ As escolhas iniciais são:
 
 A arquitetura evoluirá gradualmente, conforme novos conceitos forem estudados e novas necessidades surgirem.
 
+### Integração e sincronização com a PokéAPI
+
+Uma das funcionalidades futuras do PokeMesh será a integração com a **PokéAPI**, permitindo importar e sincronizar os 151 Pokémon da primeira geração com o banco de dados local.
+
+Inicialmente, a sincronização poderá ser realizada por um endpoint do Pokémon Service, evoluindo conforme a necessidade.
+
+Essa funcionalidade permitirá explorar conceitos como:
+
+- **Integração com APIs externas:** consumo e processamento de dados HTTP.
+- **Sincronização de dados:** importação, atualização e prevenção de registros duplicados.
+- **Processamento em lotes:** controle da quantidade de requisições simultâneas.
+- **Resiliência:** tratamento de falhas e indisponibilidade da API externa.
+- **Automação:** execução periódica da sincronização, sem necessidade de intervenção manual.
+
+Futuramente, também será possível avaliar a separação dessa responsabilidade em um serviço independente.
+
+O objetivo é compreender os desafios de manter dados sincronizados entre sistemas, preservando a consistência e evitando dependências desnecessárias de serviços externos.
+
 ## Funcionalidades e Evoluções Futuras
 
 O PokeMesh será desenvolvido de forma incremental, partindo de serviços simples até um ambiente distribuído com autenticação, persistência, escalabilidade e automação.

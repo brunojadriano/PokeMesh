@@ -74,6 +74,22 @@ A partir disso, será possível estudar como um proxy reverso, redes internas e 
 
 O projeto também permitirá experimentar diferentes configurações de execução e distribuição de carga, observando seus impactos no desempenho e na disponibilidade dos serviços.
 
+### Escalabilidade e sobrecarga do banco de dados
+
+Aumentar o número de instâncias de uma aplicação pode melhorar sua capacidade de atender requisições, mas também pode gerar um novo problema: **a sobrecarga do banco de dados**.
+
+Antes de simplesmente aumentar os recursos do banco ou adotar soluções mais complexas, existem estratégias que podem ser exploradas:
+
+- **Otimização de consultas SQL:** identificar consultas lentas, analisar planos de execução e reduzir operações desnecessárias.
+- **Indexação:** utilizar índices adequados para melhorar o desempenho das consultas.
+- **Views e Materialized Views:** explorar formas de organizar consultas e, quando apropriado, armazenar resultados pré-calculados.
+- **Cache com Redis:** reduzir consultas repetitivas ao banco de dados.
+- **Connection Pooling:** gerenciar as conexões para evitar consumo excessivo de recursos.
+
+O PokeMesh também poderá explorar essas estratégias, identificando gargalos e avaliando como o aumento de instâncias afeta o banco de dados.
+
+**Afinal, de que adianta escalar uma aplicação se todas as instâncias acabam sobrecarregando a mesma dependência?**
+
 ## Objetivo final
 
 Entender como sistemas distribuídos funcionam além da simples divisão de uma aplicação em vários servidores, explorando comunicação, autenticação, autorização, persistência, infraestrutura, segurança e escalabilidade.

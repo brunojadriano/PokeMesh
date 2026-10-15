@@ -10,5 +10,17 @@ services:
         volumes:
             - postgres_data:/var/lib/postgresql/data
 
+    postgres-auth:
+        image: postgres:17-alpine
+        environment:
+            POSTGRES_USER: ${AUTH_POSTGRES_USER}
+            POSTGRES_PASSWORD: ${AUTH_POSTGRES_PASSWORD}
+            POSTGRES_DB: ${AUTH_POSTGRES_DB}
+        ports:
+            - "127.0.0.1:5433:5432"
+        volumes:
+            - postgres_auth_data:/var/lib/postgresql/data
+
 volumes:
     postgres_data:
+    postgres_auth_data:

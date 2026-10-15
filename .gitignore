@@ -45,3 +45,6 @@ Thumbs.db
 # Local tooling
 .cache/
 .eslintcache
+
+# prisma
+**/generated/prisma

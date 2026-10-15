@@ -54,3 +54,13 @@ export async function syncFirstGenerationPokemons(req: Request, res: Response) {
         });
     }
 }
+
+export async function listPokemons(req: Request, res: Response): Promise<void> {
+    const pokemons = await prisma.pokemon.findMany({
+        orderBy: {
+            id: "asc",
+        },
+    });
+
+    res.status(200).json(pokemons);
+}
